@@ -4,7 +4,7 @@
 # 						Contributor: Zhuoyun Wei <wzyboy@wzyboy.org>
 
 pkgname=nghttp2
-pkgver=1.28.0
+pkgver=1.29.0
 pkgrel=2
 pkgdesc='Framing layer of HTTP/2 is implemented as a reusable C library'
 arch=(x86_64)
@@ -17,7 +17,7 @@ backup=(
   etc/nghttpx/nghttpx.conf
   etc/logrotate.d/nghttpx
 )
-sha256sums=('0d6c3f00614deca3935e42a27f6ad0ea87c31d8c1baa3a9c52755955c599fd8d')
+sha256sums=('a7a1b18be57be6a53a7739988ea27d6ec9209e7b0e8372b8483cd911d7838739')
 
 build() {
   cd nghttp2-$pkgver
@@ -25,7 +25,6 @@ build() {
   autoreconf -i
   ./configure \
     --prefix=/usr \
-    --with-spdylay=no \
     --disable-examples \
     --disable-python-bindings \
     --without-systemd
